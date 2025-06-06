@@ -4,8 +4,8 @@ const { serialize, deserialize } = require('./index');
 const BENCHMARK_ITERATIONS = 1000;
 
 const specFill = () => {
-    const result = [];
-    while (result.length < 300) {
+    const result = [], l = 20 + Math.random() * 300;
+    while (result.length < l) {
         result.push(Math.round(Math.random() * 1000));
     }
     return result;
