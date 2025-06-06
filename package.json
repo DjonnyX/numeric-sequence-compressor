@@ -1,0 +1,12 @@
+{
+  "name": "numeric-sequence-compressor",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./spec.js",
+    "start": "npm run test"
+  },
+  "author": "djonnyx@gmail.com",
+  "license": "ISC",
+  "description": ""
+}
