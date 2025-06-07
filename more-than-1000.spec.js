@@ -1,12 +1,12 @@
 const { serialize, deserialize } = require('./index');
 
 /** TESTS */
-const BENCHMARK_ITERATIONS = 1000;
+const BENCHMARK_ITERATIONS = 1000, MAX_VALUE_IN_ARRAY = 10000000;
 
 const specFill = () => {
     const result = [], l = 20 + Math.random() * 300;
     while (result.length < l) {
-        result.push(Math.round(Math.random() * 1000));
+        result.push(Math.round(Math.random() * MAX_VALUE_IN_ARRAY));
     }
     return result;
 }
@@ -34,7 +34,16 @@ const deserializeMustBeCorrect = (lists, withCapitalLatters = false) => {
     let isCorrect = false;
     for (let i = 0, l = iterations; i < l; i++) {
         const list = lists[i];
-        isCorrect = JSON.stringify(deserialize(serialize(list, { caseSensetive: withCapitalLatters }), { caseSensetive: withCapitalLatters })) === JSON.stringify(list);
+        console.log(JSON.stringify(list));
+        console.log(serialize(list, { caseSensetive: withCapitalLatters }));
+        console.log(JSON.stringify(deserialize(serialize(list, { caseSensetive: withCapitalLatters }), {
+            caseSensetive: withCapitalLatters,
+            maxValueInArray: MAX_VALUE_IN_ARRAY,
+        })));
+        isCorrect = JSON.stringify(deserialize(serialize(list, { caseSensetive: withCapitalLatters }), {
+            caseSensetive: withCapitalLatters,
+            maxValueInArray: MAX_VALUE_IN_ARRAY,
+        })) === JSON.stringify(list);
         if (!isCorrect) {
             return isCorrect;
         }
@@ -52,7 +61,7 @@ const isCorrect = (v, msg) => {
     return `\x1b[41m ${msg} \x1b[0m`;
 }
 
-console.info(`Benchmark on ${LISTS.length} iterations:`)
+console.info(`Benchmark [from 0 to ${MAX_VALUE_IN_ARRAY}] on ${LISTS.length} iterations:`)
 console.log(` - compression (With capital letters): \x1b[34m ${mesureCompression(LISTS, true)} \x1b[0m`);
 console.log(` - compression (Lowercase letters only): \x1b[34m ${mesureCompression(LISTS, false)} \x1b[0m`);
 const isCorrect1 = deserializeMustBeCorrect(LISTS, true);
