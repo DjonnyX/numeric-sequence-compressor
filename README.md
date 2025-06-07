@@ -5,14 +5,6 @@ Compression quality is ~ 2 times better than the original separator-separated se
 
 ## Example
 
-```ts
-const arr: Array<number> = [0, 100, 25, 7, 47, 666];
-const compressed = serialize(arr); 
-console.log(compressed); // "0-34P7-1fkq"
-```
-
-## Getting started
-
 Install
 
 ```bash
@@ -26,7 +18,7 @@ const { serialize, deserialize } = require('numeric-sequence-compressor');
 
 Serialization (Compression):
 ```ts
-const arr: Array<number> = [0, 100, 25, 7, 47, 666];
+const arr = [0, 100, 25, 7, 47, 666];
 const compressed = serialize(arr); 
 console.log(compressed); // "0-34P7-1fkq"
 ```
@@ -34,7 +26,7 @@ console.log(compressed); // "0-34P7-1fkq"
 Deserialization (Decompression):
 ```ts
 const compressed = "0-34P7-1fkq";
-const arr: Array<number> = deserialize(compressed); 
+const arr = deserialize(compressed); 
 console.log(arr); // "[0, 100, 25, 7, 47, 666]"
 ```
 
