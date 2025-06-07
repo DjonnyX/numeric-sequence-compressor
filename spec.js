@@ -26,7 +26,7 @@ const mesureCompression = (lists, withCapitalLatters = false) => {
         const list = lists[i];
         summ += JSON.stringify(list).length / serialize(list, { caseSensetive: withCapitalLatters }).length
     }
-    return `${Number(summ / iterations * 100).toFixed(2)} %`;
+    return `${Number(summ / iterations * 100 - 100).toFixed(2)} %`;
 }
 
 const deserializeMustBeCorrect = (lists, withCapitalLatters = false) => {
