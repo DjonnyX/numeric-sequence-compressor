@@ -52,7 +52,7 @@ const isCorrect = (v, msg) => {
     return `\x1b[41m ${msg} \x1b[0m`;
 }
 
-console.info(`Benchmark on ${LISTS.length} elements:`)
+console.info(`Benchmark on ${LISTS.length} iterations:`)
 console.log(` - compression (With capital letters): \x1b[34m ${mesureCompression(LISTS, true)} \x1b[0m`);
 console.log(` - compression (Lowercase letters only): \x1b[34m ${mesureCompression(LISTS, false)} \x1b[0m`);
 const isCorrect1 = deserializeMustBeCorrect(LISTS, true);
