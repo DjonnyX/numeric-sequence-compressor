@@ -50,6 +50,7 @@ const serialize = (arr, options = DEFAULT_SERIALIZE_OPTIONS) => {
  * @param {string} src 
  * @param {ISerializeOptions} options
  * @returns 
+ * @author djonnyx@gmail.com
  * @example 
  * const compressed = "0-34P7-1fkq";
  * const arr: Array<number> = deserialize(compressed); 
