@@ -1,15 +1,17 @@
-/**
- *  Компрессор числовых массивов
- *  Качество сжатия ~ в 2 раза от исходной разделенной сепараторами последовательности чисел
- */
-
 const SEPARATOR = '-', W_PATTERN = /([a-zA-Z])/;
 
 /**
- * Сереализация чиселового массива
+ * Serialization of a numeric array
  * @param {Array<number>} arr 
- * @param {string} separator опциональный
+ * @param {string} separator optional
  * @returns 
+ * @author djonnyx@gmail.com
+ * Numeric array compressor
+ * Compression quality is ~2 times better than the original sequence of numbers separated by separators
+ * @example 
+ * const arr = [0, 100, 25, 7, 47, 666];
+ * const compressed = serialize(arr); 
+ * console.log(compressed); // "0-34P7-1fkq"
  */
 const serialize = (arr, separator = SEPARATOR) => {
     const result = [];
@@ -30,10 +32,14 @@ const serialize = (arr, separator = SEPARATOR) => {
 }
 
 /**
- * Десериализация числового массива
+ * Deserializing a Numeric Array
  * @param {string} src 
- * @param {string} separator опциональный
+ * @param {string} separator optional
  * @returns 
+ * @example 
+ * const compressed = "0-34P7-1fkq";
+ * const arr: Array<number> = deserialize(compressed); 
+ * console.log(arr); // "[0, 100, 25, 7, 47, 666]"
  */
 const deserialize = (src, separator = SEPARATOR) => {
     const result = [];
