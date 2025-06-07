@@ -7,6 +7,8 @@ Compression quality is ~ 2 times better than the original separator-separated se
 
 __Important! The algorithm works correctly when the range of numbers in the array is from 0 to 1000.__
 
+__Implementation of the "universal" algorithm (Needs some improvement)__ https://github.com/DjonnyX/numeric-sequence-compressor/tree/universal
+
 
 ## Example
 
