@@ -5,6 +5,8 @@ Compression quality is ~ 2 times better than the original separator-separated se
 
 ![image](https://github.com/user-attachments/assets/5d932e1e-14ce-4d4f-aaf4-b9fa1a6a1bce)
 
+__Important! The algorithm works correctly when the range of numbers in the array is from 0 to 1000.__
+
 
 ## Example
 
