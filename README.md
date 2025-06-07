@@ -3,7 +3,7 @@
 Numeric array compressor
 Compression quality is ~ 2 times better than the original separator-separated sequence of numbers
 
-![image](https://github.com/user-attachments/assets/b7bea5d1-40e5-40d1-92f6-f0e8d5cc31e9)
+![image](https://github.com/user-attachments/assets/5d932e1e-14ce-4d4f-aaf4-b9fa1a6a1bce)
 
 
 ## Example
